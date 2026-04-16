@@ -9,10 +9,12 @@ public class PasswordCheckerTest {
   public void checksIfPasswordLengthReturnsCorrect(){
     PasswordChecker plength= new PasswordChecker(6, 12);
 
+    String actualEmpty=plength.describePasswordLength("");
     String actualMed= plength.describePasswordLength("aaronB");
     String actualLong= plength.describePasswordLength("ThisIsALongPassword");
     String actualShort = plength.describePasswordLength("short");
 
+    assertEquals("Empty Password", actualEmpty);
     assertEquals("short", actualShort);
     assertEquals("medium", actualMed);
     assertEquals("long", actualLong);

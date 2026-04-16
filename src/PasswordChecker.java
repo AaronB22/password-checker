@@ -45,7 +45,10 @@ public class PasswordChecker {
      */
     public String describePasswordLength(String password) {
         int length = password.length();
-
+        
+        if(length==0){
+            return "Empty Password";
+        }
         if (length < shortThreshold) {
             return "short";
         } else if (length < mediumThreshold) {

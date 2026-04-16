@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class PasswordCheckerTest {
 
+  // isAlphanumeric() Tests
   @Test
   public void testIsAlphanumericForLetters() {
     PasswordChecker testCheck = new PasswordChecker(6, 12);
@@ -32,8 +33,10 @@ public class PasswordCheckerTest {
 
     boolean specials = testCheck.isAlphanumeric("@!#%^&$*^#(@&)");
     boolean special = testCheck.isAlphanumeric("*");
+    boolean space = testCheck.isAlphanumeric(" ");
 
     assertEquals(false, specials);
     assertEquals(false, special);
+    assertEquals(false, space);
   }
 } 
